@@ -1,16 +1,48 @@
 #include <iostream>
 
+using namespace std;
+
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = a % b;
+        a = b;
+        b = temp;
+    }
+    return a;
+}
+
 int main() {
     int x, y;
-    std::cin >> x >> y;
 
-    int min_members = (y - x - 1) / 2 + 2;
+    cout << "Enter the first number: ";
+    cin >> x;
 
-    if (x == y - 1) {
-        min_members = (y - x) / 2 + 1;
+    cout << "Enter the second number: ";
+    cin >> y;
+
+    int l, a, b;
+    l = gcd(100 - x, x);
+    int a_1 = (100 - x / l);
+    int a_2 = x / l;
+
+    a = 0;
+    b = 0;
+
+    while (a * a_1 < b * a_2) {
+        a++;
     }
 
-    std::cout << min_members << std::endl;
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
 
-    return 0;
+    while (a < b) {
+        cout << a;
+        cout << b;
+
+        b++;
+    }
+
+    cout << a << endl;
+    cout << b << endl;
+    cout << a + b << endl;
 }
