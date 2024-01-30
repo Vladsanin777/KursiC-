@@ -3,7 +3,7 @@
 using namespace std;
 
 
-min_1(int a, int b){
+int min_1(int a, int b){
   if(a < b){
     return a;
   }else{
