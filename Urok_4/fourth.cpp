@@ -3,16 +3,21 @@
 using namespace std;
 
 int main() {
-    int i;
-    cin >> i;
-    int k = 2;
-    while (i > k) {
-        k = k * 2;
-    }
-    if (i == k) {
-        cout << "YES";
-    } else {
-        cout << "NO";
-    }
+  int n;
+  cin >> n;
+
+  if (n == 1) {
+    cout << "YES" << endl;
     return 0;
+  } else if (n % 2 == 0) {
+    while (n % 2 == 0) {
+      n /= 2;
+    }
+    if (n == 1) {
+      cout << "YES" << endl;
+      return 0;
+    }
+  }
+  cout << "NO" << endl;
+  return 0;
 }
